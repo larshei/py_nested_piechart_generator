@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
-from setup import chart_config as cfg
-from setup import chart_colors
+from chart_config import chart_config as cfg
+from chart_config import chart_colors
 
 def calculate_total_section_weight(sections):
     sections_total_weight = 0
@@ -59,8 +59,8 @@ def add_donut_to_plot(axis, donuts, donut_number, donut_radius):
     return donut_drawing, donut_width
 
 if __name__ == "__main__":
-    fig, ax      = plt.subplots()
-    ax.axis('equal')
+    fig, ax      = plt.subplots(figsize=(8, 8))
+    ax.set_aspect('equal')
     donut_radius = 0
     colors       = chart_colors
     empty_color  = (0,0,0,0)
@@ -84,4 +84,7 @@ if __name__ == "__main__":
         donut_drawing, donut_width = add_donut_to_plot(ax, donuts, donut_number, donut_radius)
         plt.setp( donut_drawing, width = donut_width, edgecolor = 'white')
 
+    ax.set_xlim(-donut_radius * 1.05, donut_radius * 1.05)
+    ax.set_ylim(-donut_radius * 1.05, donut_radius * 1.05)
+    plt.tight_layout()
     plt.show()

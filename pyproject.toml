@@ -1,0 +1,8 @@
+[project]
+name = "nested-piechart-generator"
+version = "1.0.0"
+description = "Generate nested (multi-ring) pie/donut charts with matplotlib"
+requires-python = ">=3.10"
+dependencies = [
+    "matplotlib>=3.9",
+]

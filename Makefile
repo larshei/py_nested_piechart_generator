@@ -1,10 +1,10 @@
-all: setup run
+all: sync run
 
 run:
-	python3 run.py
+	uv run run.py
 
-setup:
-	bash scripts/setupPythonVenvAndPackages.sh
+sync:
+	uv sync
 
-freeze:
-	bash scripts/freezeDependencies.sh
+lock:
+	uv lock
